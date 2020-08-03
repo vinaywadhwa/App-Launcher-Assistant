@@ -22,7 +22,7 @@
 - Report issues, Open pull request with improvements.
 - If you feel compelled, I'd love if you spread the word!
 - Reach out with any feedback ![Twitter Follow](https://img.shields.io/twitter/follow/vinayw?style=social)
-- Buy me a beer [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/vinaywadhwa)
+- Buy me a beer [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/vinaywadhwa) (app is free to use + no ads etc)
 
 ## 🏅 License
 
