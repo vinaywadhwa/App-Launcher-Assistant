@@ -17,6 +17,15 @@
 ![Screenshot](listing/screenshots/screenshot_3_small.png)
 
 
+## ⏯ Build
+- provide actual values in the app `build.gradle` file for the keystore 
+```
+            storeFile file($keystore_ala_storeFile)
+            storePassword $keystore_ala_storePassword
+            keyAlias $keystore_ala_keyAlias
+            keyPassword $keystore_ala_keyPassword
+```
+
 ## 👬 Contribution
 
 - Report issues, Open pull request with improvements.
