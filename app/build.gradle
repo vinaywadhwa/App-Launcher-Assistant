@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.vwap.app_launcher_assistant"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 4
+        versionName "1.4"
+    }
+    signingConfigs {
+        release {
+            storeFile file($keystore_ala_storeFile)
+            storePassword $keystore_ala_storePassword
+            keyAlias $keystore_ala_keyAlias
+            keyPassword $keystore_ala_keyPassword
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+}

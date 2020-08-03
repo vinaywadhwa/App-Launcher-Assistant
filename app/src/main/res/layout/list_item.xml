@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+              android:layout_width = "match_parent"
+              android:layout_height = "wrap_content"
+              android:layout_gravity = "center"
+              android:orientation = "vertical"
+              android:padding = "0dp">
+
+    <androidx.cardview.widget.CardView
+        android:id = "@+id/c_spouse"
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent"
+        android:layout_margin = "5dp"
+        android:visibility = "visible">
+
+        <RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:layout_gravity = "center"
+                        android:orientation = "vertical"
+                        android:padding = "5dp">
+
+            <View
+                android:id = "@+id/selected"
+                android:layout_width = "match_parent"
+                android:layout_height = "match_parent"
+                android:layout_marginLeft = "2dp"
+                android:layout_marginRight = "2dp"
+                android:layout_alignParentBottom="true"
+                android:background = "@color/primary_dark" />
+
+            <ImageView
+                android:id = "@+id/icon"
+                android:layout_width = "match_parent"
+                android:layout_height = "match_parent"
+                android:layout_above = "@+id/title"
+                android:layout_centerHorizontal = "true"
+                android:scaleType = "fitCenter" />
+
+            <TextView
+                android:id = "@+id/title"
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:layout_alignParentBottom = "true"
+                android:layout_centerHorizontal = "true"
+                android:layout_marginBottom = "2dp"
+                android:layout_marginLeft = "2dp"
+                android:layout_marginRight = "2dp"
+                android:layout_marginTop = "5dp"
+                android:ellipsize = "end"
+                android:gravity = "center"
+                android:lines = "2"
+                android:text = "App Name"
+                android:textColor = "@color/primary_text"
+                android:textSize = "18sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

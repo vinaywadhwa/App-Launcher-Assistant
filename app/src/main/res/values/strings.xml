@@ -1,0 +1,4 @@
+<resources>
+    <string name = "app_name">App Launcher Assistant</string>
+    <string name = "share_this_app_text">Launch your favorite app instead of the Assistant app - using App-Launcher-Assistant for Android. \n\nDownload - https://play.google.com/store/apps/details?id=com.vwap.app_launcher_assistant</string>
+</resources>
