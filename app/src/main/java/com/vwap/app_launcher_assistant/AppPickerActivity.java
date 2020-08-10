@@ -81,8 +81,10 @@ public class AppPickerActivity extends AppCompatActivity
             if (null != intent) {
                 startActivity(intent);
                 incrementAppLaunchCounterInSharedPreference();
+                Analytics.event("app_launched",packageName);
                 finish();
             } else {
+                Analytics.event("app_launch_failed",packageName);
                 Toast.makeText(AppPickerActivity.this,
                         "Couldn't launch '" + appName + "'. Please select another app.",
                         Toast.LENGTH_LONG)
@@ -90,6 +92,7 @@ public class AppPickerActivity extends AppCompatActivity
                 showAppPicker();
             }
         } catch (Exception e) {
+            Analytics.event("app_launch_failed",packageName);
             Toast.makeText(AppPickerActivity.this,
                     "Couldn't launch '" + appName + "'. Please select another app.",
                     Toast.LENGTH_LONG)
@@ -106,6 +109,7 @@ public class AppPickerActivity extends AppCompatActivity
             countString = "" + 1;
         }
         SharedPreferencesUtils.putSharedPreference("count", countString, this);
+        Analytics.event("app_launch_count",countString);
     }
 
     @Override
@@ -124,8 +128,11 @@ public class AppPickerActivity extends AppCompatActivity
         switch (item.getItemId()) {
             case 0:
                 showSettingsAlert(true);
+                Analytics.event("menu_button_clicked", "Info");
+
                 break;
             case 1:
+                Analytics.event("menu_button_clicked", "Share");
                 shareApp();
                 break;
         }
@@ -144,6 +151,7 @@ public class AppPickerActivity extends AppCompatActivity
                         .setMessage(message)
                         .setPositiveButton("Open Settings", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
+                                Analytics.event("alert_button_clicked", "Open Settings");
                                 Intent intent_as = new Intent(
                                         android.provider.Settings.ACTION_VOICE_INPUT_SETTINGS);
                                 startActivity(intent_as);
@@ -151,6 +159,7 @@ public class AppPickerActivity extends AppCompatActivity
                         })
                         .setNeutralButton("Select App", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
+                                Analytics.event("alert_button_clicked", "Select App");
                                 dialog.dismiss();
                             }
                         })
@@ -168,6 +177,8 @@ public class AppPickerActivity extends AppCompatActivity
     }
 
     private void shareApp() {
+        Analytics.event("button_clicked", "Share");
+
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_TEXT,
@@ -181,6 +192,7 @@ public class AppPickerActivity extends AppCompatActivity
         try {
             String packageName = app.activityInfo.packageName;
             String appName = (String) app.loadLabel(packageManager);
+            Analytics.event("app_id_selected", packageName);
             SharedPreferencesUtils.putSharedPreference("app_id", packageName, this);
             SharedPreferencesUtils.putSharedPreference("app_name", appName, this);
             if (recyclerView != null && recyclerView.getAdapter() != null) {

@@ -87,3 +87,9 @@ lint/tmp/
 
 
 .idea/
+
+#firebase configuration
+google-services.json
+
+#play distribution files
+app/src/main/play
