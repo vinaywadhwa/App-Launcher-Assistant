@@ -1,7 +1,5 @@
-![Feature graphic](listing/feature_graphic.png)
-
 ## ⬇️ Download
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="100">][google-play-link]
+[<img src="https://github.com/vinaywadhwa/App-Launcher-Assistant/blob/master/listing/feature_graphic.png" alt="Get it on Google Play" >][google-play-link]
 
 ## 🛠 Setup
 
@@ -10,6 +8,11 @@
 
 ..that's it. Launch the selected app with your device's Assistant button/gesture anytime.
 
+## ⏯ Demo
+
+![Demo](listing/demo.gif)
+
+
 ## 📷 Screenshots
 
 ![Screenshot](listing/screenshots/screenshot_1_small.png)
@@ -17,7 +20,8 @@
 ![Screenshot](listing/screenshots/screenshot_3_small.png)
 
 
-## ⏯ Build
+
+## 👷🏼 Build
 - provide actual values in the app `build.gradle` file for the keystore 
 ```
             storeFile file($keystore_ala_storeFile)
